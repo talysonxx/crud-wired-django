@@ -52,18 +52,14 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Configurando o Ambiente e Banco de Dados (Variáveis `.env`)
-O projeto utiliza a biblioteca `django-environ` para ocultar os dados sensíveis através de um arquivo `.env`. No momento em que baixar o projeto, você encontrará apenas um arquivo chamado `.env.example`.
+### 2. Configurando o Banco de Dados
 
-1. **Faça uma cópia** do arquivo `.env.example` e renomeie-o para `.env` puro.
-2. Abra o arquivo `.env` gerado.
+Por decisão de projeto, o sistema está interligado diretamente a um banco de dados **PostgreSQL** local especificado no arquivo `crud_antonio/settings.py`. Estão configuradas as seguintes credenciais padrão:
+- **Banco**: `crud_antonio`
+- **Usuário**: `admin`
+- **Senha**: `admin`
 
-**⚠️ Importante sobre o Banco de Dados:**
-Por padrão e para uso em produção, o sistema está configurado para tentar se conectar a um banco de dados **PostgreSQL** usando as variáveis definidas no seu `.env` (Usuario,  Senha, Host etc). 
-
-> **Para testes locais rápidos:** Se você quiser apenas rodar e testar o sistema agora mesmo **SEM** lidar com configuração do PostgreSQL, abra o arquivo `crud_antonio/settings.py`. Você verá o banco `django.db.backends.sqlite3` do próprio Django comentado no começo do bloco `DATABASES`. Basta descomentar as duas linhas do SQLite3 e deletar/comentar todas as outras linhas nativas (ENGINE, NAME, USER, PASSWORD...) da requisição do `env()`.
-
-### 3. Migrações e Inicialização
+> **Para testes locais rápidos:** Se você quiser apenas rodar e testar o sistema agora mesmo **SEM** lidar com a instalação ou configuração de um PostgreSQL, abra o arquivo `crud_antonio/settings.py`. Procure o bloco `DATABASES`. Você verá as linhas do banco `django.db.backends.sqlite3` do próprio Django comentadas. Basta descomentar as duas linhas do SQLite3 e comentar todo o resto (o dicionário do postgres). O Django criará o arquivo do banco automaticamente para você.
 Seja usando PostgreSQL ou SQLite3 temporário, aplique a estrutura dos dados com:
 
 ```bash
