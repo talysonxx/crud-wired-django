@@ -31,7 +31,7 @@ def adicionarTarefa(request):
 def editarTarefa(request, tarefa_id):
     tarefa = Tarefa.objects.get(id=tarefa_id)
     if tarefa.dono_tarefa != request.user:
-        raise Http404
+        return redirect('home')
     if request.method != 'POST':
         form = forms.AdicionarTarefaForm(instance=tarefa)
     else:
