@@ -1,0 +1,22 @@
+{% extends 'usuarios/base.html' %}
+
+{% block title %}criar.creat{% endblock title %}
+
+{% block content %}
+
+    <h1 class="neon-title">Wired Network</h1>
+    <p>Crie sua conta na rede..  </br>wired </p>
+
+    <!-- Lain GIF for Register -->
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="https://media.tenor.com/_qQ1q2G8JFEAAAAC/serial-experiments-lain.gif" alt="Lain Eyes" style="display: none;">
+        <img src="https://media.tenor.com/y1vK6n7Z6M8AAAAC/serial-experiments-lain-aesthetic.gif" alt="Lain Wires" style="max-width: 100%; border: 2px solid var(--retro-magenta); border-radius: 8px; box-shadow: 0 0 10px var(--retro-cyan); filter: brightness(0.8) contrast(1.2);">
+    </div>
+    <form action="" method="POST" class="retro-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="neon-btn">Cadastrar</button>
+    </form>
+    <p style="margin-top: 20px;">Se já tiver uma conta, faça <a href="{% url 'login' %}" class="retro-link">login</a>.</p>
+
+{% endblock content %}

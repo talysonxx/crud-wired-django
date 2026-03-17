@@ -1,0 +1,25 @@
+{% extends 'tarefas/base.html' %}
+
+{% block title %}ed. re..fa{% endblock title %}
+
+{% block content %}
+
+    <h1 class="glitch" data-text="MODIFICAR_REGISTRO">MODIFICAR_REGISTRO</h1>
+    
+    <p style="color: var(--retro-yellow); font-family: 'Press Start 2P', cursive; font-size: 0.8rem; margin-bottom: 30px;">
+        > SISTEMA DE ARQUIVOS ACESSADO. INSIRA NOVOS PARÂMETROS.
+    </p>
+
+    <div style="text-align: left; width: 100%;">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <div style="display: flex; gap: 20px; margin-top: 30px; justify-content: center;">
+                <button type="submit" class="neon-btn">Salvar Alterações</button>
+                <a href="{% url 'home' %}" class="neon-btn" style="border-color: var(--retro-magenta); color: var(--retro-magenta); text-shadow: none; display: inline-block; box-sizing: border-box; text-align: center;">[ Voltar ]</a>
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}

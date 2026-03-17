@@ -1,0 +1,50 @@
+{% extends 'tarefas/base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+    <h1 class="neon-title">Terminal Ativo</h1>
+    
+    <!-- Serial Experiments Lain aesthetic GIF -->
+    <div style="margin: 30px 0; text-align: center;">
+        <img src="https://media.tenor.com/_qQ1q2G8JFEAAAAC/serial-experiments-lain.gif" alt="Lain Interface" style="max-width: 100%; border: 2px solid var(--retro-cyan); border-radius: 8px; box-shadow: 0 0 15px var(--retro-cyan);">
+    </div>
+
+    <p style="color: var(--retro-yellow); font-family: 'Press Start 2P', cursive; font-size: 0.8rem; margin-bottom: 40px;">
+        Bem-vindo(a) de volta, {{ user.nome }}! Acesso concedido.
+    </p>
+
+    {% comment %} aqui vai ficar as tarefas {% endcomment %}
+    <div class="task-list">
+        {% for tarefa in tarefas %}
+            <div class="task-card">
+                <div class="task-header">
+                    <h3><a href="{% url 'tarefa' tarefa.id %}">{{ tarefa.nome }}</a></h3>
+                    <span class="task-status {% if tarefa.status %}status-complete{% else %}status-incomplete{% endif %}">
+                        {% if tarefa.status %}[ CONCLUÍDO ]{% else %}[ PENDENTE ]{% endif %}
+                    </span>
+                </div>
+                <p class="task-desc">{{ tarefa.descricao|default:"Nenhuma descrição inserida..." }}</p>
+                <div class="task-footer">
+                    <span class="task-date">Registrado em {{ tarefa.data_criacao|date:"d/m/Y" }}</span>
+                </div>
+            </div>
+        {% empty %}
+            <div class="task-card" style="text-align: center; border-color: var(--retro-purple);">
+                <p>> NENHUM DADO ENCONTRADO NO SISTEMA <</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div style="margin-top: 30px;">
+        <a href="{% url 'adicionar' %}" class="neon-btn" style="display: inline-block; box-sizing: border-box; text-align: center; text-decoration: none;">[ + ADICIONAR NOVO REGISTRO ]</a>
+    </div>
+
+    <form action="{% url 'logout' %}" method="POST" style="margin-top: 50px;">
+        {% csrf_token %}
+        <button type="submit" class="neon-btn" style="border-color: var(--retro-magenta); color: var(--retro-magenta);">
+            [ Desconectar ]
+        </button>
+    </form>
+{% endblock content %}

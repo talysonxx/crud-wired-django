@@ -1,0 +1,20 @@
+{% extends 'usuarios/base.html' %}
+
+{% block title %}loglog{% endblock title %}
+
+{% block content %}
+
+    <h1 class="neon-title glitch" data-text="Autenticação">Autenticação</h1>
+    <p style="color: var(--retro-cyan); font-style: italic;">"Aonde quer que você vá, todos estão conectados."</p>
+    
+    <!-- Lain GIF for Login -->
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="https://media.tenor.com/2m_cK2_KzQkAAAAC/lain-serial-experiments-lain.gif" alt="Lain Typing" style="max-width: 100%; border: 2px solid var(--retro-cyan); border-radius: 8px; box-shadow: 0 0 10px var(--retro-magenta);">
+    </div>
+    <form action="" method="POST" class="retro-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="neon-btn">Entrar</button>
+    </form>
+    <p style="margin-top: 20px;">Se não tiver uma conta, <a href="{% url 'registrar' %}" class="retro-link">registre-se</a>.</p>
+{% endblock content %}

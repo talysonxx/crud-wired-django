@@ -1,0 +1,21 @@
+{% extends 'usuarios/base.html' %}
+
+{% block title %}init.{% endblock title %}
+
+{% block content %}
+
+    <h1 class="neon-title glitch" data-text="The Wired" style="font-size: 2.5rem;">Wired. Network.</h1>
+    
+    <!-- Welcome Lain GIF -->
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="https://media.tenor.com/Y171iZp5O8wAAAAC/serial-experiments-lain-lain.gif" alt="Lain Welcome" style="max-width: 100%; border: 2px solid var(--retro-purple); filter: contrast(120%) grayscale(50%); border-radius: 8px; box-shadow: 0 0 15px var(--retro-purple);">
+    </div>
+
+    <p style="margin-bottom: 40px; font-style: italic; color: var(--retro-cyan);">"Aquele que não pode ser lembrado, nunca existiu."</p>
+    
+    <div style="display: flex; gap: 20px; justify-content: center;">
+        <a href="{% url 'login' %}" class="neon-btn retro-link">Conectar</a>
+        <a href="{% url 'registrar' %}" class="neon-btn retro-link">Sincronizar</a>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'usuarios/base.html' %}
+
+{% block title %}ERRO_404{% endblock title %}
+
+{% block content %}
+
+    <h1 class="neon-title glitch" data-text="404 - DADOS_NÃO_ENCONTRADOS" style="font-size: 2rem; color: var(--retro-magenta);">404 - DADOS_NÃO_ENCONTRADOS</h1>
+    
+    <!-- Lain Glitch GIF (Or something similar) -->
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="https://images.steamusercontent.com/ugc/2503523314647265540/76C130E8C1D8A194AD444A1A0C8F486FCF357596/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" alt="Error Glitch" style="max-width: 100%; border: 2px solid var(--retro-magenta); filter: contrast(120%) grayscale(20%); border-radius: 8px; box-shadow: 0 0 15px var(--retro-magenta);">
+    </div>
+
+    <p style="margin-bottom: 20px; font-family: 'VT323', monospace; color: var(--retro-cyan); font-size: 1.2rem;">
+        > O SETOR SOLICITADO NÃO EXISTE NESTA CAMADA DA WIRED.<br>
+        > OS PACOTES FORAM PERDIDOS OU CORROMPIDOS.<br>
+        > VERIFIQUE OS PARÂMETROS E TENTE NOVAMENTE.
+    </p>
+    
+    <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+        <a href="{% url 'index' %}" class="neon-btn retro-link" style="border-color: var(--retro-cyan); color: var(--retro-cyan);">[ RETORNAR AO NÓ PRINCIPAL ]</a>
+    </div>
+
+{% endblock content %}
