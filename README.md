@@ -8,7 +8,8 @@ Ele foi projetado especificamente para atuar como um "bloco de notas" seguro e e
 Um usuário pode se registrar no sistema (Autenticação) e manter suas anotações exclusivas e vinculadas ao seu cadastro de maneira privada, com todo o registro acontecendo dentro desse falso terminal *neon*.
 
 ### 🎥 Showcase do Sistema
-![Sistema CRUD The Wired em Ação](file:///C:/Users/talys/.gemini/antigravity/brain/e0e9e4eb-8942-40a6-9462-d8bbd88ac115/retro_wired_showcase_1773708976038.webp)
+![Sistema CRUD The Wired em Ação](https://github.com/user-attachments/assets/4ea7faad-334f-439f-a16c-41f9ec0caecb)!
+
 
 ---
 
